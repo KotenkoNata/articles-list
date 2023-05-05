@@ -1,0 +1,33 @@
+.newArticleForm {
+    background-color: #44403c;
+    margin-bottom: 40px;
+    padding: 16px 32px;
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.newArticleForm input, .newArticleForm select {
+    background-color: #78716c;
+    border: none;
+    border-radius: 1em;
+    color: inherit;
+    font-family: inherit;
+    font-size: 18px;
+    padding: 5px;
+    width: 15em;
+}
+.newArticleForm input::placeholder{
+    background-color: #78716c;
+    border: none;
+    border-radius: 100px;
+    color: inherit;
+    font-family: inherit;
+    font-size: 18px;
+    padding: 16px;
+    width: 220px
+}
+
+.newArticleForm input::placeholder {
+    color: #a8a29e;
+}

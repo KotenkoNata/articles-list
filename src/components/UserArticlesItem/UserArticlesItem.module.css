@@ -1,0 +1,55 @@
+.articleItem {
+    display: flex;
+    justify-content: space-evenly;
+    margin-bottom: 20px;
+    height: 15em;
+}
+
+.articleItem_imageContainer{
+    overflow: hidden;
+    border-radius: 32px;
+    width: 50%;
+    margin-right: 20px;
+    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+}
+
+.articleItem_imageContainer img{
+    object-fit: fill;
+}
+
+.articleItem_descriptionContainer{
+    width: 50%;
+}
+
+.articleItem_descriptionContainer h3 {
+    font-family: 'Kaisei Decol', serif;
+    font-weight: 400;
+    font-size: 28px;
+    line-height: 35px;
+    color: #333333;
+    margin-bottom: 10px;
+}
+
+.articleItem_author {
+    font-weight: 400;
+    font-size: 12px;
+    line-height: 18px;
+    color: #333333;
+    margin-bottom: 30px;
+    margin-left: 10px;
+}
+
+.articleItem_description {
+    font-size: 12px;
+    line-height: 18px;
+    color: #333333;
+}
+
+.articleItem_descriptionContainer div {
+    display: flex;
+    align-content: center;
+}
+
+
+
+

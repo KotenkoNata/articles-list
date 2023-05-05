@@ -1,0 +1,17 @@
+.Header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #333333;
+    padding: 1em 3em;
+    margin-bottom: 20px;
+}
+
+.HeaderTitle{
+    font-family: 'Kaisei Decol', serif;
+    font-style: normal;
+    font-weight: 400;
+    font-size: 40px;
+    line-height: 1.2;
+    color: white;
+}

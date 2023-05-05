@@ -1,0 +1,33 @@
+.articleSearchForm{
+    width: 30%;
+    padding: 10px;
+    background-color: white;
+    display: flex;
+    align-items: center;
+    border-radius: 5px;
+}
+
+.textField {
+    padding: 0 15px;
+    flex-grow: 5;
+    height: 1em;
+    border: none;
+    color: #333333;
+    font-size: 0.75rem;
+    line-height: 1.5;
+    cursor: pointer;
+    background-color: white;
+}
+
+.textField::placeholder{
+     color: gray;
+ }
+
+.textField:focus{
+     outline: none;
+ }
+
+.articleSearchFormButton {
+    border: none;
+    background: transparent;
+}
