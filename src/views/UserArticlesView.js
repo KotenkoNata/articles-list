@@ -9,7 +9,7 @@ function UserArticlesView () {
         return(
             <Container>
                     <Header />
-                    {/*<NewUserArticles />*/}
+                    <NewUserArticles />
                     <UserArticlesList />
                     <Footer />
             </Container>
