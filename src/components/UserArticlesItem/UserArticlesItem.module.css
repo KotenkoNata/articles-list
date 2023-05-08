@@ -50,6 +50,21 @@
     align-content: center;
 }
 
+.articleItem_trashContainer {
+    margin-left: auto;
+}
+
+.articleItem_trashBtn {
+    border: none;
+    background: transparent;
+}
+
+.articleItem_trashBtn:hover {
+    cursor: pointer;
+}
+
+
+
 
 
 

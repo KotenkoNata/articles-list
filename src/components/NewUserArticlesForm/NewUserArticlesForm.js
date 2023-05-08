@@ -1,11 +1,13 @@
 import styles from "./NewUserArticlesForm.module.css";
 import Button from "../Button";
-import {useDispatch, useSelector} from "react-redux";
-import {addUserArticleAction} from "../../redux/userArticles/userArticlesReducer";
+import {useDispatch} from "react-redux";
 import {useCallback, useState} from "react";
+import {addUserArticleAction} from "../../redux/userArticles/userArticlesReducer";
+import uniqid from 'uniqid';
+
 
 function NewUserArticlesForm() {
-    const [newArticle, setNewArticle] = useState({title: "", author: "", description: "", image: ""});
+    const [newArticle, setNewArticle] = useState({title: "", author: "", description: "", image: "", id: ""});
     const dispatch = useDispatch();
 
     const handleChange = useCallback(
@@ -13,6 +15,7 @@ function NewUserArticlesForm() {
             setNewArticle({
                 ...newArticle,
                 [name]: value,
+                id: uniqid(),
             });
         },
         [newArticle],
@@ -21,8 +24,8 @@ function NewUserArticlesForm() {
     const handleSubmit = useCallback(event => {
         event.preventDefault();
         dispatch(addUserArticleAction(newArticle));
-        setNewArticle({title: "", author: "", description: "", image: ""});
-    }, [newArticle])
+        setNewArticle({title: "", author: "", description: "", image: "", id: ""});
+    }, [newArticle, dispatch])
 
     return (
         <form className={styles.newArticleForm} onSubmit={handleSubmit}>
