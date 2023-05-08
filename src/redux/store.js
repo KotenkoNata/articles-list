@@ -1,9 +1,9 @@
-import {combineReducers, createStore} from "redux";
 import {userArticlesReducer} from "./userArticles/userArticlesReducer";
-import { composeWithDevTools } from '@redux-devtools/extension';
+import {configureStore} from "@reduxjs/toolkit";
 
-const rootReducer = combineReducers({
-        userArticles: userArticlesReducer,
-})
-
-export const store = createStore(rootReducer, composeWithDevTools());
+export const store = configureStore({
+    reducer: {
+        userArticles: userArticlesReducer
+    },
+    devTools: process.env.NODE_ENV === 'development',
+});

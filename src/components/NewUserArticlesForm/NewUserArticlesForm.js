@@ -3,33 +3,29 @@ import Button from "../Button";
 import {useDispatch, useSelector} from "react-redux";
 import {addUserArticleAction} from "../../redux/userArticles/userArticlesReducer";
 import {useCallback, useState} from "react";
+
 function NewUserArticlesForm() {
     const [newArticle, setNewArticle] = useState({title: "", author: "", description: "", image: ""});
-
     const dispatch = useDispatch();
-    const userArticle = useSelector(state => state.userArticles.article);
-
 
     const handleChange = useCallback(
-        ({ target: { name, value } }) => {
-            setNewArticle({ ...newArticle,
-                [name]: value,});
-            console.log(`newArticle`, newArticle)
+        ({target: {name, value}}) => {
+            setNewArticle({
+                ...newArticle,
+                [name]: value,
+            });
         },
         [newArticle],
     );
 
-    const addArticle = (name)=>{
-        const article = {
-            name,
-            id: Date.now(),
-        }
-
-        dispatch(addUserArticleAction(article))
-    }
+    const handleSubmit = useCallback(event => {
+        event.preventDefault();
+        dispatch(addUserArticleAction(newArticle));
+        setNewArticle({title: "", author: "", description: "", image: ""});
+    }, [newArticle])
 
     return (
-        <form className={styles.newArticleForm}>
+        <form className={styles.newArticleForm} onSubmit={handleSubmit}>
             <input
                 type='title'
                 placeholder="Add article title"
