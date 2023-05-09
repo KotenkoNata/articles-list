@@ -45,16 +45,16 @@
     color: #333333;
 }
 
-.articleItem_descriptionContainer div {
+.articleItem_descriptionContainer > div {
     display: flex;
-    align-content: center;
+    justify-content: space-between;
 }
 
-.articleItem_trashContainer {
+.articleItem_trashContainer{
     margin-left: auto;
 }
 
-.articleItem_trashBtn {
+.articleItem_trashBtn, .articleItem_pinIcon {
     border: none;
     background: transparent;
 }
@@ -62,6 +62,11 @@
 .articleItem_trashBtn:hover {
     cursor: pointer;
 }
+
+.articleItem_pinIcon:hover {
+    cursor: pointer;
+}
+
 
 
 

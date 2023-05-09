@@ -7,7 +7,7 @@ import uniqid from 'uniqid';
 
 
 function NewUserArticlesForm() {
-    const [newArticle, setNewArticle] = useState({title: "", author: "", description: "", image: "", id: ""});
+    const [newArticle, setNewArticle] = useState({title: "", author: "", description: "", image: "", id: "", isPinned: false});
     const dispatch = useDispatch();
 
     const handleChange = useCallback(
@@ -24,7 +24,7 @@ function NewUserArticlesForm() {
     const handleSubmit = useCallback(event => {
         event.preventDefault();
         dispatch(addUserArticleAction(newArticle));
-        setNewArticle({title: "", author: "", description: "", image: "", id: ""});
+        setNewArticle({title: "", author: "", description: "", image: "", id: "", isPinned: false});
     }, [newArticle, dispatch])
 
     return (
