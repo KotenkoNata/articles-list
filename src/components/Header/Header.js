@@ -3,7 +3,8 @@ import SearchUserArticle from "../SearchUserArticle";
 import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {updateShowForm} from "../../redux/userArticles/userArticlesReducer";
-import NewUserArticles from "../NewUserArticlesForm/NewUserArticlesForm";
+import Navigation from "../Navigation/Navigation";
+
 function Header() {
     const dispatch = useDispatch();
 
@@ -13,9 +14,7 @@ function Header() {
         return dispatch(updateShowForm(!show));
     }
     return <header className={styles.Header}>
-        <div>
-            <h1 className={styles.HeaderTitle}>Article</h1>
-        </div>
+        <Navigation />
         <SearchUserArticle />
         <button className={styles.showFormBtn} onClick={handleOnClick}>{show ? 'Close' : 'Post'}</button>
     </header>

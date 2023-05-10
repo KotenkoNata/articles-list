@@ -1,0 +1,21 @@
+.navigation a{
+    font-family: 'Lato', sans-serif;
+    font-weight: 300;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+
+    color: #FFFFFF;
+}
+
+.navigation a:first-of-type{
+    margin-right: 10px;
+}
+
+.navigation .active {
+    font-weight: 400;
+}
+
+.navigation .pending {
+    color: #FFFFFF;
+}
