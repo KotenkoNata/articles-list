@@ -1,10 +1,11 @@
-import {addNewsArticlesAction} from "../userArticles/newsArticlesReducer";
+import {addNewsArticlesAction, updateNewsArticlesPageNumberAction} from "../userArticles/newsArticlesReducer";
 
-export const fetchNewsArticles = () => {
+export const fetchNewsArticles = (page) => {
     return function (dispatch) {
         const url = 'https://newsapi.org/v2/top-headlines?' +
             'pageSize=10&' +
             'country=us&' +
+            `page=${page}&` +
             `apiKey=${process.env.REACT_APP_NEWSAPI_KEY}`;
         const req = new Request(url);
         fetch(req)

@@ -4,10 +4,11 @@ import React from "react";
 import {useDispatch, useSelector} from "react-redux";
 import {updateShowForm} from "../../redux/userArticles/userArticlesReducer";
 import Navigation from "../Navigation/Navigation";
+import {useLocation} from "react-router-dom";
 
 function Header() {
     const dispatch = useDispatch();
-
+    const location = useLocation();
     const show = useSelector(state => state.userArticles.showForm)
     const handleOnClick = (event) => {
         event.preventDefault();
@@ -15,8 +16,10 @@ function Header() {
     }
     return <header className={styles.Header}>
         <Navigation />
-        <SearchUserArticle />
-        <button className={styles.showFormBtn} onClick={handleOnClick}>{show ? 'Close' : 'Post'}</button>
+        {location.pathname === "/"
+            ? <><SearchUserArticle />
+            <button className={styles.showFormBtn} onClick={handleOnClick}>{show ? 'Close' : 'Post'}</button></>
+            : null}
     </header>
 }
 

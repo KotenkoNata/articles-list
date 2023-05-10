@@ -1,17 +1,20 @@
 import NewsArticlesList from "../components/NewsArticlesList";
 import {useEffect} from "react";
 import {fetchNewsArticles} from "../redux/asyncActions/newsArticles";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 
-function NewsArticlesView () {
+function NewsArticlesView() {
     const dispatch = useDispatch();
+    const page = useSelector(state => state.newsArticles.pageNumber);
 
     useEffect(() => {
-        dispatch(fetchNewsArticles())
+                dispatch(fetchNewsArticles(page))
     }, [])
 
-    return(
-            <NewsArticlesList />
+    return (
+        <>
+            <NewsArticlesList/>
+        </>
     )
 }
 

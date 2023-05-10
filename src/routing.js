@@ -3,28 +3,28 @@ import Layout from "./components/Layout";
 import routes from "./routes";
 import UserArticlesView from "./views/UserArticlesView";
 import ErrorPage from "./views/ErrorPage";
-import { createBrowserRouter } from "react-router-dom";
+import {createBrowserRouter} from "react-router-dom";
 
 const routing = createBrowserRouter(
     [
         {
             path: routes.userArticles,
-            element: <Layout />,
-            errorElement: <ErrorPage />,
+            element: <Layout/>,
+            errorElement: <ErrorPage/>,
             children: [
                 {
-                    element: <UserArticlesView />,
+                    element: <UserArticlesView/>,
                     index: true
                 },
             ],
         },
         {
             path: routes.newsArticles,
-            element: <Layout />,
-            errorElement: <ErrorPage />,
+            element: <Layout/>,
+            errorElement: <ErrorPage/>,
             children: [
                 {
-                    element: <NewsArticlesView />,
+                    element: <NewsArticlesView/>,
                     index: true
                 },
             ]

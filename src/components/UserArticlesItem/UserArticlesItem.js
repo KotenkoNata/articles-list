@@ -26,7 +26,7 @@ function UserArticlesItem ({article}) {
                     <div>
                         <h3>{article.title}</h3>
                         <button className={styles.articleItem_pinIcon} onClick={()=> handlePin(article.id)}>
-                            <SvgPinIcon fill={article.isPinned ? "blue": "gray"}/>
+                            <SvgPinIcon fill={article.isPinned ? "#EF6C01": "#78716c"}/>
                         </button>
                     </div>
                     <div>
