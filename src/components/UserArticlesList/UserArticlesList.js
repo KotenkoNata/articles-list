@@ -1,11 +1,10 @@
 import styles from "./UserArticlesList.module.css";
 import UserArticlesItem from "../UserArticlesItem";
-import {useDispatch, useSelector} from "react-redux";
-import {addNewsArticlesAction} from "../../redux/userArticles/newsArticlesReducer";
-import {fetchNewsArticles} from "../../redux/asyncActions/newsArticles";
+import {useSelector} from "react-redux";
+
 
 function UserArticlesList() {
-const dispatch= useDispatch();
+
     const userArticles = useSelector(state => {
         const filteredValue = state.userArticles.searchValue;
         const articles = state.userArticles.articles;

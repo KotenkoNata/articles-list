@@ -1,8 +1,8 @@
 import styles from "./NewUserArticlesForm.module.css";
 import Button from "../Button";
-import {useDispatch} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
 import {useCallback, useState} from "react";
-import {addUserArticleAction} from "../../redux/userArticles/userArticlesReducer";
+import {addUserArticleAction, updateShowForm} from "../../redux/userArticles/userArticlesReducer";
 import uniqid from 'uniqid';
 
 
@@ -25,7 +25,7 @@ function NewUserArticlesForm({setShowForm}) {
         event.preventDefault();
         dispatch(addUserArticleAction(newArticle));
         setNewArticle({title: "", author: "", description: "", image: "", id: "", isPinned: false});
-        setShowForm(false);
+        dispatch(updateShowForm(false))
     }, [newArticle, dispatch])
 
     return (

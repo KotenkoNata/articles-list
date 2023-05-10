@@ -1,12 +1,9 @@
-import Container from "../components/Container";
-import Header from "../components/Header";
-import Footer from "../components/Footer";
 import NewsArticlesList from "../components/NewsArticlesList";
 import {useEffect} from "react";
 import {fetchNewsArticles} from "../redux/asyncActions/newsArticles";
 import {useDispatch} from "react-redux";
 
-function UserArticlesView () {
+function NewsArticlesView () {
     const dispatch = useDispatch();
 
     useEffect(() => {
@@ -18,4 +15,4 @@ function UserArticlesView () {
     )
 }
 
-export default UserArticlesView;
+export default NewsArticlesView;
