@@ -43,7 +43,6 @@ export const userArticlesReducer = (state = defaultState, action) => {
                 };
             }
         case UPDATE_SEARCH:
-            console.log(`action.payload`, action.payload)
             return {
                 articles: [...state.articles],
                 pinnedArticle: [...state.pinnedArticle],

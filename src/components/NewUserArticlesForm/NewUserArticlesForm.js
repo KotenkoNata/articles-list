@@ -6,7 +6,7 @@ import {addUserArticleAction} from "../../redux/userArticles/userArticlesReducer
 import uniqid from 'uniqid';
 
 
-function NewUserArticlesForm() {
+function NewUserArticlesForm({setShowForm}) {
     const [newArticle, setNewArticle] = useState({title: "", author: "", description: "", image: "", id: "", isPinned: false});
     const dispatch = useDispatch();
 
@@ -25,6 +25,7 @@ function NewUserArticlesForm() {
         event.preventDefault();
         dispatch(addUserArticleAction(newArticle));
         setNewArticle({title: "", author: "", description: "", image: "", id: "", isPinned: false});
+        setShowForm(false);
     }, [newArticle, dispatch])
 
     return (

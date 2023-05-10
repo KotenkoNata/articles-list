@@ -1,9 +1,11 @@
 import styles from "./UserArticlesList.module.css";
 import UserArticlesItem from "../UserArticlesItem";
-import {useSelector} from "react-redux";
+import {useDispatch, useSelector} from "react-redux";
+import {addNewsArticlesAction} from "../../redux/userArticles/newsArticlesReducer";
+import {fetchNewsArticles} from "../../redux/asyncActions/newsArticles";
 
 function UserArticlesList() {
-
+const dispatch= useDispatch();
     const userArticles = useSelector(state => {
         const filteredValue = state.userArticles.searchValue;
         const articles = state.userArticles.articles;
@@ -15,7 +17,7 @@ function UserArticlesList() {
     return <ul className={styles.articlesList}>
         {userArticles.length > 0
             ? (userArticles.map(item => <UserArticlesItem key={item.title} article={item} />))
-            : null}
+            : `No articles found`}
     </ul>
 }
 

@@ -4,14 +4,28 @@
     align-items: center;
     background: #333333;
     padding: 1em 3em;
-    margin-bottom: 20px;
 }
 
-.HeaderTitle{
+.HeaderTitle {
     font-family: 'Kaisei Decol', serif;
     font-style: normal;
     font-weight: 400;
     font-size: 40px;
     line-height: 1.2;
     color: white;
+}
+
+.showFormBtn {
+    font-family: 'Lato', sans-serif;
+    font-style: normal;
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 19px;
+    text-align: center;
+    letter-spacing: 0.05em;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    background: #78716c;
+    border-radius: 10px;
 }
