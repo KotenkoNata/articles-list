@@ -1,4 +1,4 @@
-import {addNewsArticlesAction, updateNewsArticlesPageNumberAction} from "../userArticles/newsArticlesReducer";
+import {addNewsArticlesAction} from "../userArticles/newsArticlesReducer";
 
 export const fetchNewsArticles = (page) => {
     return function (dispatch) {

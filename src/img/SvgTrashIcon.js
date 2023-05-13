@@ -4,8 +4,8 @@ function SvgTrashIcon() {
             xmlns="http://www.w3.org/2000/svg"
             width={16}
             height={16}
-            fill="#333333"
-            viewBox="0 0 16 16"
+            fill="#FF0000"
+            viewBox="0 0 15 15"
         >
             <path d="M5.5 5.5A.5.5 0 016 6v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm2.5 0a.5.5 0 01.5.5v6a.5.5 0 01-1 0V6a.5.5 0 01.5-.5zm3 .5a.5.5 0 00-1 0v6a.5.5 0 001 0V6z" />
             <path

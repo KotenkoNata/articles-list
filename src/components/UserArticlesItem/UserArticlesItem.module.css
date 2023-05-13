@@ -1,30 +1,36 @@
 .articleItem {
-    display: flex;
-    justify-content: space-evenly;
-    margin-bottom: 20px;
-    height: 15em;
+    min-width: 270px;
+    height: 470px;
+    box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.15);
+    overflow: hidden;
 }
 
 .articleItem_imageContainer{
     overflow: hidden;
-    border-radius: 32px;
-    width: 50%;
-    margin-right: 20px;
-    filter: drop-shadow(0px 4px 4px rgba(0, 0, 0, 0.25));
+    width: 100%;
+    position: relative;
 }
 
 .articleItem_imageContainer img{
-    object-fit: fill;
+    max-width: 100%;
+    object-fit: cover;
 }
 
 .articleItem_descriptionContainer{
-    width: 50%;
+    padding: 20px;
+
+}
+
+.articleItem_titleContainer {
+    height: 75px;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }
 
 .articleItem_descriptionContainer h3 {
     font-family: 'Kaisei Decol', serif;
     font-weight: 400;
-    font-size: 28px;
+    font-size: 24px;
     line-height: 35px;
     color: #333333;
     margin-bottom: 10px;
@@ -47,16 +53,36 @@
 
 .articleItem_descriptionContainer > div {
     display: flex;
-    justify-content: space-between;
 }
 
 .articleItem_trashContainer{
     margin-left: auto;
 }
 
+.articleItem_pinIcon {
+    position: absolute;
+    right: 20px;
+    top: 20px;
+    z-index: 3;
+}
+
+.articleItem_trashBtn {
+    position: absolute;
+    right: 20px;
+    bottom: 20px;
+    z-index: 3;
+}
+
 .articleItem_trashBtn, .articleItem_pinIcon {
+    display: inline-flex;
+    justify-content: center;
+    align-items: center;
+    height: 44px;
+    width: 44px;
     border: none;
-    background: transparent;
+    border-radius: 50%;
+    padding: 5px;
+    background-color: rgba(255, 255, 255,0.7);
 }
 
 .articleItem_trashBtn:hover {
