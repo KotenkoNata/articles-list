@@ -34,7 +34,9 @@ function UserArticlesItem ({article}) {
                         <h3>{article.title}</h3>
                     </div>
                     <div className={styles.articleItem_authorContainer}>
-                        <SvgAuthorIcon />
+                        <div>
+                            <SvgAuthorIcon />
+                        </div>
                         <span className={styles.articleItem_author}>{article.author}</span>
                     </div>
                     <p className={styles.articleItem_description}>{article.description}</p>

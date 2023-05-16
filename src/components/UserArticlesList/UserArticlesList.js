@@ -9,8 +9,9 @@ function UserArticlesList() {
         const filteredValue = state.userArticles.searchValue;
         const articles = state.userArticles.articles;
         const pinned = state.userArticles.pinnedArticle;
-        return pinned.concat(articles).filter(({title, description}) =>
-                title.toLowerCase().includes(filteredValue.toLowerCase()) || description.toLowerCase().includes(filteredValue.toLowerCase()));
+        const arrayOfArticles = pinned ? [...pinned,...articles] : articles;
+        return arrayOfArticles ? arrayOfArticles.filter(({title, description}) =>
+                title.toLowerCase().includes(filteredValue.toLowerCase()) || description.toLowerCase().includes(filteredValue.toLowerCase())) : [];
     });
 
     return <ul className={styles.articlesList}>

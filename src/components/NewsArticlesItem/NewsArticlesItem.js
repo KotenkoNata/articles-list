@@ -9,11 +9,13 @@ const NewsArticlesItem  = ({article}) => {
                  alt={article.title}/>
         </div>
         <div className={styles.articleItem_descriptionContainer}>
-            <div>
+            <div className={styles.articleItem_titleContainer}>
                 <h3>{article.title}</h3>
             </div>
-            <div>
-                <SvgAuthorIcon />
+            <div className={styles.articleItem_authorContainer}>
+                <div>
+                    <SvgAuthorIcon />
+                </div>
                 <span className={styles.articleItem_author}>{article.author}</span>
             </div>
 

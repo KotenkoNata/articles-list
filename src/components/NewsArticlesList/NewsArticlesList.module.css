@@ -1,5 +1,20 @@
 .newArticlesList {
-    margin-top: 30px;
+    margin-top: 40px;
+    display: grid;
+    grid-template-columns: repeat(1, 1fr);
+    gap: 30px 30px;
+}
+
+@media (max-width: 992px) and (min-width: 576px) {
+    .newArticlesList{
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media screen and (min-width: 992px) {
+    .newArticlesList{
+        grid-template-columns: repeat(3, 1fr);
+    }
 }
 
 .addMoreBtn {

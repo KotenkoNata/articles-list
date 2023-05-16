@@ -8,6 +8,7 @@
 .articleItem_imageContainer{
     overflow: hidden;
     width: 100%;
+    height: 200px;
     position: relative;
 }
 
@@ -22,18 +23,23 @@
 }
 
 .articleItem_titleContainer {
-    height: 75px;
+    height: 65px;
     text-overflow: ellipsis;
     overflow: hidden;
+    margin-bottom: 5px;
 }
 
 .articleItem_descriptionContainer h3 {
     font-family: 'Kaisei Decol', serif;
     font-weight: 400;
-    font-size: 24px;
-    line-height: 35px;
+    font-size: 20px;
+    line-height: 1.5;
     color: #333333;
     margin-bottom: 10px;
+}
+
+.articleItem_authorContainer {
+    margin-bottom: 15px;
 }
 
 .articleItem_author {
@@ -41,7 +47,6 @@
     font-size: 12px;
     line-height: 18px;
     color: #333333;
-    margin-bottom: 30px;
     margin-left: 10px;
 }
 
