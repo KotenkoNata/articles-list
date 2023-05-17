@@ -28,9 +28,7 @@ export const userArticlesReducer = (state = defaultState, action) => {
         case ADD_PINED_ARTICLE:
             if(state.pinnedArticle.length === 0) {
                 const findPinnedArticle = state.articles.filter(item => {
-                    if(item.id === action.payload) {
-                        return item;
-                    }
+                    return item.id === action.payload
                 });
                 return {
                     articles: state.articles.filter(item => item.id !== action.payload),
@@ -39,16 +37,35 @@ export const userArticlesReducer = (state = defaultState, action) => {
                     showForm: false,
                 }
             } else {
-                const findArticle = {
-                    ...state.pinnedArticle[0],
-                    isPinned: false
-                };
-                return {
-                    articles: [...state.articles, findArticle],
-                    pinnedArticle: [],
-                    searchValue: '',
-                    showForm: false,
-                };
+                if(state.pinnedArticle[0].id === action.payload){
+                    const findArticle = {
+                        ...state.pinnedArticle[0],
+                        isPinned: false
+                    };
+                    return {
+                        articles: [...state.articles, findArticle],
+                        pinnedArticle: [],
+                        searchValue: '',
+                        showForm: false,
+                    };
+                }else {
+                    const findPinnedArticle = state.articles.filter(item => {
+                        return item.id === action.payload
+                    });
+                    const deletePreviousPinnedArticle = state.articles.filter(item => item.id !== action.payload);
+                    const findPreviousPInnedArticle = {
+                        ...state.pinnedArticle[0],
+                        isPinned: false
+                    };
+                    return {
+                        articles: [findPreviousPInnedArticle, ...deletePreviousPinnedArticle],
+                        pinnedArticle: [{...findPinnedArticle[0], isPinned: true}],
+                        searchValue: '',
+                        showForm: false,
+                    };
+
+                }
+
             }
         case UPDATE_SEARCH:
             return {
@@ -73,8 +90,6 @@ export const userArticlesReducer = (state = defaultState, action) => {
 export const addUserArticleAction = (payload) => ({type: ADD_ARTICLE, payload: payload});
 export const removeUserArticleAction = (payload) => ({type: REMOVE_ARTICLE, payload: payload});
 export const addPinnedUserArticleAction = (payload) => ({type: ADD_PINED_ARTICLE, payload: payload});
-
 export const updateSearchValue = (payload) => ({type: UPDATE_SEARCH, payload: payload});
-
 export const updateShowForm = (payload) => ({type: UPDATE_SHOW_FORM, payload: payload});
 

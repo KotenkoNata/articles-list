@@ -1,4 +1,4 @@
-import {addNewsArticlesAction} from "../userArticles/newsArticlesReducer";
+import {addNewsArticlesAction, updateNewsArticlesTotalResultsAction} from "../userArticles/newsArticlesReducer";
 
 export const fetchNewsArticles = (page) => {
     return function (dispatch) {
@@ -13,7 +13,8 @@ export const fetchNewsArticles = (page) => {
                 return response.json()
             })
             .then(json => {
+                dispatch(updateNewsArticlesTotalResultsAction(json.totalResults))
                 return dispatch(addNewsArticlesAction(json.articles))
-            })
+            }).catch(e => e.message)
     }
 }
