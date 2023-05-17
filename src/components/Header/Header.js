@@ -15,10 +15,11 @@ function Header() {
         return dispatch(updateShowForm(!show));
     }
     return <header className={styles.Header}>
-        <Navigation />
+        <Navigation/>
         {location.pathname === "/"
-            ? <><SearchUserArticle />
-            <button className={styles.showFormBtn} onClick={handleOnClick}>{show ? 'Close' : 'Post'}</button></>
+            ? <><SearchUserArticle/>
+                <button className={styles.showFormBtn} onClick={handleOnClick}>{show ? 'Close' : 'Post'}</button>
+            </>
             : null}
     </header>
 }

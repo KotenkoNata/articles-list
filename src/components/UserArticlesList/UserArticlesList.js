@@ -9,16 +9,18 @@ function UserArticlesList() {
         const filteredValue = state.userArticles.searchValue;
         const articles = state.userArticles.articles;
         const pinned = state.userArticles.pinnedArticle;
-        const arrayOfArticles = pinned ? [...pinned,...articles] : articles;
+        const arrayOfArticles = pinned ? [...pinned, ...articles] : articles;
         return arrayOfArticles ? arrayOfArticles.filter(({title, description}) =>
-                title.toLowerCase().includes(filteredValue.toLowerCase()) || description.toLowerCase().includes(filteredValue.toLowerCase())) : [];
+            title.toLowerCase().includes(filteredValue.toLowerCase()) || description.toLowerCase().includes(filteredValue.toLowerCase())) : [];
     });
 
-    return <ul className={styles.articlesList}>
-        {userArticles.length > 0
-            ? (userArticles.map(item => <UserArticlesItem key={item.title} article={item} />))
-            : `No articles found`}
-    </ul>
+    return (
+        <ul className={styles.articlesList}>
+            {userArticles.length > 0
+                ? (userArticles.map(item => <UserArticlesItem key={item.title} article={item}/>))
+                : `No articles found`}
+        </ul>
+    )
 }
 
 

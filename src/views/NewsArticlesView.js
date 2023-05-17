@@ -8,7 +8,7 @@ function NewsArticlesView() {
     const page = useSelector(state => state.newsArticles.pageNumber);
 
     useEffect(() => {
-                dispatch(fetchNewsArticles(page))
+        dispatch(fetchNewsArticles(page))
     }, [])
 
     return (

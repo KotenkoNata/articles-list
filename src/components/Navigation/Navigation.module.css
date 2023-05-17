@@ -2,7 +2,7 @@
     margin-bottom: 10px;
 }
 
-.navigation a{
+.navigation a {
     font-family: 'Lato', sans-serif;
     font-weight: 300;
     font-size: 16px;
@@ -12,7 +12,7 @@
     color: #FFFFFF;
 }
 
-.navigation a:first-of-type{
+.navigation a:first-of-type {
     margin-right: 10px;
 }
 
@@ -24,7 +24,7 @@
     color: #FFFFFF;
 }
 
-@media screen and (min-width:992px) {
+@media screen and (min-width: 992px) {
     .navigation {
         margin-bottom: 0;
     }

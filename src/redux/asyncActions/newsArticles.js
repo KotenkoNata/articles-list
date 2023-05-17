@@ -15,6 +15,7 @@ export const fetchNewsArticles = (page) => {
             .then(json => {
                 dispatch(updateNewsArticlesTotalResultsAction(json.totalResults))
                 return dispatch(addNewsArticlesAction(json.articles))
-            }).catch(e => e.message)
+            })
+            .catch(e => e.message)
     }
 }

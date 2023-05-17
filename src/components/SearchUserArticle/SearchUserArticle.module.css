@@ -1,4 +1,4 @@
-.articleSearchForm{
+.articleSearchForm {
     width: 100%;
     padding: 10px;
     background-color: white;
@@ -21,31 +21,31 @@
     background-color: white;
 }
 
-.textField::placeholder{
-     color: gray;
- }
+.textField::placeholder {
+    color: gray;
+}
 
-.textField:focus{
-     outline: none;
- }
+.textField:focus {
+    outline: none;
+}
 
 .articleSearchFormButton {
     border: none;
     background: transparent;
 }
 
-.articleSearchFormButton:hover{
+.articleSearchFormButton:hover {
     cursor: pointer;
 }
 
 @media (max-width: 992px) and (min-width: 576px) {
-    .articleSearchForm{
+    .articleSearchForm {
         width: 50%;
     }
 }
 
 @media screen and (min-width: 992px) {
-    .articleSearchForm{
+    .articleSearchForm {
         width: 30%;
         margin-bottom: 0;
     }

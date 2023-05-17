@@ -1,4 +1,4 @@
-.articlesList{
+.articlesList {
     margin-top: 40px;
     display: grid;
     grid-template-columns: 1fr;
@@ -6,13 +6,13 @@
 }
 
 @media (max-width: 992px) and (min-width: 576px) {
-    .articlesList{
+    .articlesList {
         grid-template-columns: repeat(2, 1fr);
     }
 }
 
 @media screen and (min-width: 992px) {
-    .articlesList{
+    .articlesList {
         grid-template-columns: repeat(3, 1fr);
     }
 }

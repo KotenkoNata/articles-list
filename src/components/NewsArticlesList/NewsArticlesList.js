@@ -21,16 +21,19 @@ function NewsArticlesList() {
         return dispatch(fetchNewsArticles(page + 1));
     }
 
-    return (<>
-        <ul className={styles.newArticlesList}>
-            {newsArticles
-                ? (newsArticles.map(item => <NewsArticlesItem key={item.url} article={item}/>))
-                : `No articles found`}
-        </ul>
-        <div className={styles.addMoreBtn_container}>
-            {newsArticles.length < newsArticlesTotalResult ? <button className={styles.addMoreBtn} onClick={handleClick}>Add 10 more articles</button> : null}
-        </div>
-    </>)
+    return (
+        <>
+            <ul className={styles.newArticlesList}>
+                {newsArticles
+                    ? (newsArticles.map(item => <NewsArticlesItem key={item.url} article={item}/>))
+                    : `No articles found`}
+            </ul>
+            <div className={styles.addMoreBtn_container}>
+                {newsArticles.length < newsArticlesTotalResult ?
+                    <button className={styles.addMoreBtn} onClick={handleClick}>Add 10 more articles</button> : null}
+            </div>
+        </>
+    )
 }
 
 export default NewsArticlesList;
