@@ -31,3 +31,14 @@
 .newArticleForm input::placeholder {
     color: #a8a29e;
 }
+
+@media (max-width: 1300px) {
+    .newArticleForm {
+        flex-direction: column;
+        align-items: stretch;
+    }
+
+    .newArticleForm input, .newArticleForm select {
+        width: auto;
+    }
+}

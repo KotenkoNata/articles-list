@@ -5,6 +5,12 @@
     overflow: hidden;
 }
 
+@media (max-width: 992px) and (min-width: 576px) {
+    .articleItem {
+        min-width: 200px;
+    }
+}
+
 .articleItem_imageContainer{
     overflow: hidden;
     width: 100%;
@@ -13,13 +19,13 @@
 }
 
 .articleItem_imageContainer img{
-    max-width: 100%;
+    width: 100%;
     object-fit: cover;
+    height: inherit;
 }
 
 .articleItem_descriptionContainer{
     padding: 20px;
-
 }
 
 .articleItem_titleContainer {

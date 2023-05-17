@@ -12,12 +12,12 @@ const NewsArticlesItem  = ({article}) => {
             <div className={styles.articleItem_titleContainer}>
                 <h3>{article.title}</h3>
             </div>
-            <div className={styles.articleItem_authorContainer}>
+            {article.author ? <div className={styles.articleItem_authorContainer}>
                 <div>
-                    <SvgAuthorIcon />
+                    <SvgAuthorIcon/>
                 </div>
                 <span className={styles.articleItem_author}>{article.author}</span>
-            </div>
+            </div> : null}
 
             <p className={styles.articleItem_description}>{article.description}</p>
         </div>

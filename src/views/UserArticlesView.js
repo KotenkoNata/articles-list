@@ -7,11 +7,11 @@ function UserArticlesView () {
 
     const showForm = useSelector(state => state.userArticles.showForm);
 
-        return(<>
+        return(<main>
                 {showForm ? <NewUserArticlesForm/> : null}
                 <UserArticlesList />
                 <h1>Test</h1>
-        </>)
+        </main>)
 }
 
 export default UserArticlesView;

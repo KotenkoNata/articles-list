@@ -12,9 +12,9 @@ function NewsArticlesView() {
     }, [])
 
     return (
-        <>
+        <main>
             <NewsArticlesList/>
-        </>
+        </main>
     )
 }
 
