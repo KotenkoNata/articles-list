@@ -18,7 +18,7 @@ function NewsArticlesList() {
         e.preventDefault();
         dispatch(updateNewsArticlesPageNumberAction(page + 1));
         dispatch(fetchNewsArticles(page + 1));
-    }, [newsArticles])
+    }, [page, dispatch])
 
     return (
         <>
