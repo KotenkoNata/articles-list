@@ -30,7 +30,7 @@ function NewsArticlesList() {
             </ul>
             <div className={styles.addMoreBtn_container}>
                 {newsArticles.length < newsArticlesTotalResult ?
-                    <button className={styles.addMoreBtn} onClick={handleClick}>Add 10 more articles</button> : null}
+                    <button className={styles.addMoreBtn} onClick={handleClick}>Load more</button> : null}
             </div>
         </>
     )
