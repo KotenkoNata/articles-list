@@ -1,5 +1,5 @@
 import staticArticles from "./articles.json"
-import {addNewsArticlesAction, updateNewsArticlesTotalResultsAction} from "../userArticles/newsArticlesReducer";
+import {addNewsArticlesAction} from "../userArticles/newsArticlesReducer";
 
 async function getRemoteArticles({page, pageSize = 10}) {
     const url = 'https://newsapi.org/v2/top-headlines?' +
@@ -23,23 +23,19 @@ async function getRemoteArticles({page, pageSize = 10}) {
 }
 
 async function getStaticArticles({page, pageSize = 10}) {
-    let resp = {
-        status: staticArticles.status,
-        totalResults: staticArticles.totalResults,
-        articles: [],
-    };
     const from = (page - 1) * pageSize
     const to = page * pageSize
-
-    if (from < staticArticles.totalResults) {
-        resp.articles = [...staticArticles.articles].filter((value, index) => {
-            return from <= index && index < to
-        })
-    }
-
+    const response = {
+        status: staticArticles.status,
+        totalResults: staticArticles.totalResults,
+        articles: [...staticArticles.articles]
+            .filter((value, index) => {
+                return from <= index && index < to
+            }),
+    };
     return {
         status: "ok",
-        response: resp,
+        response: response,
     }
 }
 
@@ -54,9 +50,10 @@ export const fetchNewsArticles = (page) => {
         })
 
         if (resp.status === "ok") {
-            const json = resp.response
-            dispatch(updateNewsArticlesTotalResultsAction(json.totalResults))
-            dispatch(addNewsArticlesAction(json.articles))
+            dispatch(addNewsArticlesAction({
+                totalResults: resp.response.totalResults,
+                articles: resp.response.articles,
+            }))
         }
 
         if (resp.status === "error") {

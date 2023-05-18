@@ -3,11 +3,9 @@ import Layout from "./components/Layout";
 import routes from "./routes";
 import UserArticlesView from "./views/UserArticlesView";
 import ErrorPage from "./views/ErrorPage";
-import {createBrowserRouter, createHashRouter} from "react-router-dom";
+import {createBrowserRouter} from "react-router-dom";
 
-const createRouter = process.env.NODE_ENV === "development" ? createBrowserRouter : createHashRouter;
-
-const routing = createRouter(
+const routing = createBrowserRouter(
     [
         {
             path: routes.userArticles,

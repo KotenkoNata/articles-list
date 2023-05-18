@@ -6,7 +6,6 @@ const defaultState = {
 
 const ADD_NEWS_ARTICLE = "ADD_NEWS_ARTICLE";
 const UPDATE_PAGE_NUMBER = "UPDATE_PAGE_NUMBER";
-const UPDATE_TOTAL_RESULTS = "UPDATE_TOTAL_RESULTS";
 
 function distinctArticles(articles) {
     articles = new Map(articles.map(item => [item["urlToImage"], item])).values()
@@ -16,23 +15,19 @@ function distinctArticles(articles) {
 export const newsArticlesReducer = (state = defaultState, action) => {
     switch (action.type) {
         case ADD_NEWS_ARTICLE:
+            const {totalResults, articles} = action.payload
             return {
                 ...state,
+                totalResults: totalResults,
                 newsArticles: distinctArticles([
                     ...state.newsArticles,
-                    ...action.payload,
+                    ...articles,
                 ]),
             }
         case UPDATE_PAGE_NUMBER:
             return {
                 ...state,
-                newsArticles: [...state.newsArticles],
                 pageNumber: action.payload
-            }
-        case UPDATE_TOTAL_RESULTS:
-            return {
-                ...state,
-                totalResults: action.payload
             }
         default:
             return state;
@@ -46,10 +41,5 @@ export const addNewsArticlesAction = (payload) => ({
 
 export const updateNewsArticlesPageNumberAction = (payload) => ({
     type: UPDATE_PAGE_NUMBER,
-    payload: payload
-})
-
-export const updateNewsArticlesTotalResultsAction = (payload) => ({
-    type: UPDATE_TOTAL_RESULTS,
     payload: payload
 })
