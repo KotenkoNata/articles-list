@@ -9,7 +9,7 @@ async function getRemoteArticles({page, pageSize = 10}) {
         `apiKey=${process.env.REACT_APP_NEWSAPI_KEY}`;
     try {
         const req = new Request(url);
-        const response = await fetch(req)
+        const response = await fetch(req);
         return {
             status: "ok",
             response: await response.json(),
@@ -39,7 +39,9 @@ async function getStaticArticles({page, pageSize = 10}) {
     }
 }
 
-const getArticles = process.env.NODE_ENV === "development" ? getRemoteArticles : getStaticArticles
+const getArticles = process.env.NODE_ENV === "development"
+    ? getRemoteArticles
+    : getStaticArticles
 
 export const fetchNewsArticles = (page) => {
     return async dispatch => {

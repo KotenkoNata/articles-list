@@ -8,14 +8,14 @@ const ADD_NEWS_ARTICLE = "ADD_NEWS_ARTICLE";
 const UPDATE_PAGE_NUMBER = "UPDATE_PAGE_NUMBER";
 
 function distinctArticles(articles) {
-    articles = new Map(articles.map(item => [item["urlToImage"], item])).values()
+    articles = new Map(articles.map(item => [item["url"], item])).values()
     return [...articles]
 }
 
 export const newsArticlesReducer = (state = defaultState, action) => {
     switch (action.type) {
         case ADD_NEWS_ARTICLE:
-            const {totalResults, articles} = action.payload
+            const {totalResults, articles} = action.payload;
             return {
                 ...state,
                 totalResults: totalResults,
